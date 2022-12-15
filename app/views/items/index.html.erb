@@ -1,0 +1,24 @@
+<h1>Articulos</h1>
+<h2>
+ <%=link_to 'crear articulo', new_item_path if Current.user%>
+ <%= link_to 'login', new_session_path unless Current.user %>
+ <%= link_to 'register', new_user_path unless Current.user %>
+ <%=link_to 'Shopping Cart', shopping_carts_url if Current.user%>
+ <%= link_to 'logout', session_path(Current.user), method: :delete if Current.user %>
+</h2>
+<ul>
+  <% @items.each do |item| %>
+    <li>
+        <%=link_to item.name, item %>
+    </li>
+    
+    <li>
+      <%= item.price%>
+    </li>
+  <% end %>
+</ul>
+
+
+
+
+  

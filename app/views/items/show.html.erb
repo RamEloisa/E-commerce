@@ -1,0 +1,10 @@
+<h1><%= @item.name %></h1>
+
+<p><%= @item.description %></p>
+
+<h2><%= @item.price %></h2>
+
+<%= link_to "Editar", edit_item_path(@item) if @item.user == Current.user %>
+<%= link_to 'Eliminar', item_path(@item), method: :delete if @item.user == Current.user%>
+
+<%= link_to'Add Shopping Carts', shopping_carts_url(item_id: @item.id),method: :post if @item.user == Current.user %>

@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+  <div>
+  <%= f.label :name_user %>
+  <%= f.text_field :name_user, placeholder: "Username" %>
+  </div>
+  <div>
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder: "E-mail" %>
+  <div>
+  <%= f.label :role %>
+  <%= f.select :role, [["Cliente", "costomer"], ["Tienda", "organization"]] %>
+  </div>
+  <div>
+  <%= f.label :password %>
+  <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+  <div>
+  <%= f.submit "Create Account" %>
+  </div>
+<% end %>
